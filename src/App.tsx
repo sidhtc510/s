@@ -14,7 +14,7 @@ const queryClient = new QueryClient()
 
 export default function App() {
   return (
-    <ContextProvider>
+    <ContextProvider>   {/* // Контекст. используется для того что бы получать адресс и использовать для получения баланса  */}
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
           <Wrapper>

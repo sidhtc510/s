@@ -8,8 +8,9 @@ export default function Connect() {
 
   const context = useContext(Context); // получаем контекст
   if (!context) throw new Error('ContextProvider is missing');
+
   const { setAddressContext } = context; // функция для сохранения адреса
-  const { connect } = useConnect(); // функция для подключения
+  const { connect } = useConnect(); // функция для подключения 
   const { address, isConnected } = useAccount(); // адрес и статус подключения
   const { disconnect } = useDisconnect(); // функция для отключения
 
@@ -21,7 +22,7 @@ export default function Connect() {
       {isConnected ? (
         <Button onClick={() => disconnect()}>Disconnect</Button> // кнопка отключения
       ) : (
-        <Button onClick={() => connect({ connector: injected() })}>Connect</Button> // кнопка подключения
+        <Button onClick={() => connect({ connector: injected() })}>Connect</Button> // кнопка подключения. инжектед используется для доступа ко всем установленым кошелькам
       )}
     </>
   )
